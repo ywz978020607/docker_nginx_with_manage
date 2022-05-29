@@ -1,4 +1,4 @@
-# nginx with django to support auth, upload(drag or click) and pic_pipeline.
+# Docker of nginx with django to support auth, upload(drag or click) and pic_pipeline.
 
 # Why use this?
 
