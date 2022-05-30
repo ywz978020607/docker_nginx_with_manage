@@ -409,12 +409,13 @@ def upload_files(request):
         for file in request.FILES:
             # file是上传的文件名 - 一般都是单文件上传
             file_path = os.path.join(file_path_prefix, file)
+            file_path_directory = os.path.dirname(file_path)
             data = request.FILES.get(file)
             print(file_path)
             # 覆盖
             if os.path.exists(file_path):
-                os.remove(file_path)
-            os.system("mkdir -p " + file_path_prefix)
+                os.system("rm -rf {}".format(file_path))
+            os.system("mkdir -p {}".format(file_path_directory))
             with open(file_path, 'wb') as f:
                 f.write(data.read())
     return HttpResponse("ok")

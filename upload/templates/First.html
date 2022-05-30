@@ -136,7 +136,11 @@
                         </div>
                     </div>
                     <br><br><br>
-                    <input type="file" class="btn btn-primary" @change="chooseFile">
+                    文件上传(支持多个) 
+                    <input type="file" class="btn btn-primary" name="upload" multiple @change="chooseFile">
+                    <br><br><br>
+                    文件夹上传
+                    <input type="file" class="btn btn-primary" name="upload" webkitdirectory @change="chooseFile">
                 </div>
     </div>
 
@@ -342,29 +346,31 @@
                         }
                     })
                 },
-                
-                
-                
-                //通用选择上传
+
+                //通用选择上传文件(夹)
                 chooseFile: function (e) {
                     //do not use drag
                     console.log(e);
                     this.files = [];
-                    this.uploadFile(e.target.files[0]);
+                    // this.uploadFile(e.target.files[0]);
+                    for (var i = 0; i !== e.target.files.length; i++) {
+                        this.uploadFile(e.target.files[i]);
+                    }
                 },
                 //拖拽事件
                 uploadFile: function (file) {
                     that = this;
                     console.log(file);
                     var item = {
-                        name: file.name,
+                        name: (file.webkitRelativePath==="")?file.name:file.webkitRelativePath,
                         uploadPercentage: 1
                     };
                     this.files.push(item);
                     var idx = this.files.length - 1;
                     //
                     var fd = new FormData();
-                    fd.append(file.name, file); //一次appen如果有效则变成一个文件
+                    // fd.append(file.name, file); //一次appen如果有效则变成一个文件
+                    fd.append((file.webkitRelativePath==="")?file.name:file.webkitRelativePath, file); //一次appen如果有效则变成一个文件
                     if(that.input_val[0]){
                         fd.append('pathprefix', that.input_val[0]);//不会被request.FILES扫描出来
                     }

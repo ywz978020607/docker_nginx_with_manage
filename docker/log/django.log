@@ -2,23 +2,146 @@ Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-May 30, 2022 - 15:23:04
+May 30, 2022 - 19:31:01
 Django version 2.2, using settings 'django1.settings'
 Starting development server at http://0.0.0.0:8000/
 Quit the server with CONTROL-C.
 /src/files/
-<MultiValueDict: {'M1_1_histogram_eq.png': [<InMemoryUploadedFile: M1_1_histogram_eq.png (image/png)>]}>
-/src/files/M1_1_histogram_eq.png
-[30/May/2022 15:24:02] "POST /upload_files/ HTTP/1.0" 200 2
-/src/files/a/b/c
-<MultiValueDict: {'1.png': [<InMemoryUploadedFile: 1.png (image/png)>]}>
-/src/files/a/b/c/1.png
-[30/May/2022 15:24:20] "POST /upload_files/ HTTP/1.0" 200 2
-/src/files/a/b/c
-<MultiValueDict: {'2.png': [<InMemoryUploadedFile: 2.png (image/png)>]}>
-/src/files/a/b/c/2.png
-[30/May/2022 15:24:20] "POST /upload_files/ HTTP/1.0" 200 2
-{'kind': '000', 'username': 'admin'}
-[30/May/2022 15:25:11] "POST /auth/ HTTP/1.0" 200 79
-{'kind': '005', 'username': 'admin'}
-[30/May/2022 15:25:22] "POST /auth/ HTTP/1.0" 200 28
+<MultiValueDict: {'vivo - 副本.txt': [<InMemoryUploadedFile: vivo - 副本.txt (text/plain)>]}>
+/src/files/vivo - 副本.txt
+[30/May/2022 19:35:57] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files//src/files/
+
+<MultiValueDict: {'vivo - 副本.txt': [<InMemoryUploadedFile: vivo - 副本.txt (text/plain)>]}>
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>/src/files/vivo - 副本.txt
+
+/src/files/vivo.txt
+[30/May/2022 19:41:22] "POST /upload_files/ HTTP/1.0" 200 2
+[30/May/2022 19:41:22] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files//src/files/
+
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}><MultiValueDict: {'vivo - 副本.txt': [<InMemoryUploadedFile: vivo - 副本.txt (text/plain)>]}>
+
+/src/files/vivo - 副本.txt/src/files/vivo.txt
+
+[30/May/2022 19:45:39] "POST /upload_files/ HTTP/1.0" 200 2
+[30/May/2022 19:45:39] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files//src/files/
+
+<MultiValueDict: {'vivo - 副本.txt': [<InMemoryUploadedFile: vivo - 副本.txt (text/plain)>]}><MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+
+/src/files/vivo - 副本.txt/src/files/vivo.txt
+
+[30/May/2022 19:46:09] "POST /upload_files/ HTTP/1.0" 200 2
+[30/May/2022 19:46:09] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+/src/files/vivo.txt
+[30/May/2022 19:48:09] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+/src/files/<MultiValueDict: {'vivo - 副本.txt': [<InMemoryUploadedFile: vivo - 副本.txt (text/plain)>]}>
+
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>/src/files/vivo - 副本.txt
+
+/src/files/vivo.txt
+[30/May/2022 19:49:23] "POST /upload_files/ HTTP/1.0" 200 2
+[30/May/2022 19:49:23] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+/src/files/vivo.txt
+[30/May/2022 19:49:59] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+/src/files/vivo.txt
+[30/May/2022 19:50:21] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+/src/files/vivo.txt
+[30/May/2022 19:50:52] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+/src/files/
+<MultiValueDict: {'vivo - 副本.txt': [<InMemoryUploadedFile: vivo - 副本.txt (text/plain)>]}><MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+
+/src/files/vivo.txt/src/files/vivo - 副本.txt
+
+[30/May/2022 19:51:10] "POST /upload_files/ HTTP/1.0" 200 2
+[30/May/2022 19:51:10] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+/src/files/vivo.txt
+[30/May/2022 19:51:13] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+/src/files/<MultiValueDict: {'vivo - 副本.txt': [<InMemoryUploadedFile: vivo - 副本.txt (text/plain)>]}>
+
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>/src/files/vivo - 副本.txt
+
+/src/files/vivo.txt
+[30/May/2022 19:51:28] "POST /upload_files/ HTTP/1.0" 200 2
+[30/May/2022 19:51:28] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+/src/files/<MultiValueDict: {'vivo - 副本.txt': [<InMemoryUploadedFile: vivo - 副本.txt (text/plain)>]}>
+
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>/src/files/vivo - 副本.txt
+
+/src/files/vivo.txt
+[30/May/2022 19:51:52] "POST /upload_files/ HTTP/1.0" 200 2
+[30/May/2022 19:51:52] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+/src/files/<MultiValueDict: {'vivo - 副本.txt': [<InMemoryUploadedFile: vivo - 副本.txt (text/plain)>]}>
+
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+/src/files/vivo - 副本.txt
+/src/files/vivo.txt
+[30/May/2022 19:52:12] "POST /upload_files/ HTTP/1.0" 200 2
+[30/May/2022 19:52:12] "POST /upload_files/ HTTP/1.0" 200 2
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 30, 2022 - 21:11:54
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 30, 2022 - 21:11:59
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/files//src/files/
+
+<MultiValueDict: {'123/vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}><MultiValueDict: {'123/vivo - 副本.txt': [<InMemoryUploadedFile: vivo - 副本.txt (text/plain)>]}>
+
+/src/files/123/vivo - 副本.txt
+/src/files/123/vivo.txt
+[30/May/2022 21:12:10] "POST /upload_files/ HTTP/1.0" 200 2
+[30/May/2022 21:12:10] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+/src/files/<MultiValueDict: {'123/vivo - 副本.txt': [<InMemoryUploadedFile: vivo - 副本.txt (text/plain)>]}>
+
+<MultiValueDict: {'123/vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>/src/files/123/vivo - 副本.txt
+
+/src/files/123/vivo.txt
+[30/May/2022 21:12:21] "POST /upload_files/ HTTP/1.0" 200 2
+[30/May/2022 21:12:21] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+/src/files/<MultiValueDict: {'123/vivo - 副本.txt': [<InMemoryUploadedFile: vivo - 副本.txt (text/plain)>]}>
+
+<MultiValueDict: {'123/vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+/src/files/123/vivo - 副本.txt/src/files/123/vivo.txt
+
+[30/May/2022 21:12:47] "POST /upload_files/ HTTP/1.0" 200 2
+[30/May/2022 21:12:47] "POST /upload_files/ HTTP/1.0" 200 2
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 30, 2022 - 21:13:47
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
