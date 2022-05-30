@@ -372,7 +372,8 @@
                     xhr.onreadystatechange = function () {
                         // 回调
                         if(xhr.status != 200 && xhr.status != 0){
-                            alert("upload fail error.")
+                            // alert("upload fail error.")
+                            alert(xhr.status);
                             xhr = null;
                             that.files = [];
                         }
@@ -392,7 +393,7 @@
                     e.preventDefault();
                 },
                 onDrop: function (e) {
-                    this.files = [];
+                    // this.files = [];
                     e.stopPropagation();
                     e.preventDefault();
                     var dt = e.dataTransfer;

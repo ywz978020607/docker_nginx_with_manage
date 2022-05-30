@@ -11,6 +11,23 @@ cd docker/
 # only once
 docker-compose build
 
-docker-compose up -d  #you can change the .yml=> /src/files path and rerun this command
+docker-compose up -d  #you can change the .yml=> xxx:/src/files path and rerun this command
 ```
-Finally open the page by http://yourip:81/files/ to check the files folder, and open http://yourip:81/upload/templates/Login.html (or `First.html`) to login or upload(automatically jump to login).
+Finally open the page by http://yourip:81/files/ to check the files folder, and open http://yourip:81/upload/templates/Login.html (or `First.html`) to login or upload(automatically jump to login). The django log file is at `docker/log/django.log`.
+
+# Examples
+When you start this docker, then you will get this effect:
+<center class="half">
+<img src="files/1.png" width="300" />
+<img src="files/2.png" width="300" />
+<img src="files/3.png" width="300" />
+<img src="files/4.png" width="300" />
+<img src="files/5.png" width="300" />
+<img src="files/6.png" width="300" />
+<img src="files/7.png" width="300" />
+<img src="files/8.png" width="300" />
+<img src="files/9.png" width="300" />
+</center>
+
+## Note
+If the file is too large(>500MB), then will echo 413 error for nginx/django.conf: `client_max_body_size    500m;`

@@ -414,7 +414,7 @@ def upload_files(request):
             # 覆盖
             if os.path.exists(file_path):
                 os.remove(file_path)
-            os.system("mkdir -p " + file_path)
+            os.system("mkdir -p " + file_path_prefix)
             with open(file_path, 'wb') as f:
                 f.write(data.read())
     return HttpResponse("ok")
