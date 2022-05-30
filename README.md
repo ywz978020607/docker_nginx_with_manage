@@ -12,3 +12,4 @@ docker-compose build
 
 docker-compose up -d  #you can change the .yml=> /src/files path and rerun this command
 ```
+Finally open the page by http://yourip:81/files/ to check the files folder, and open http://yourip:81/upload/templates/Login.html (or `First.html`) to login or upload(automatically jump to login).
