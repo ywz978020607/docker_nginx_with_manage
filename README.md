@@ -1,4 +1,5 @@
 # Docker of nginx with django to support auth, upload(drag or click) and pic_pipeline.
+It's a simple nginx docker with a django backend as the background management module to support user auth and upload files, etc. You can loggin as admin with this account.(user:admin   passwd:a)
 
 # Why use this?
 
