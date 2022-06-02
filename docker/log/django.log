@@ -22,3 +22,27 @@ Quit the server with CONTROL-C.
 /src/files/ywzvivofile2/ywzvivofile2.ab
 [03/Jun/2022 01:34:28] "POST /upload_files/ HTTP/1.0" 200 2
 [03/Jun/2022 01:34:28] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+<MultiValueDict: {'ywzvivofile2/ywzvivofile2.ac': [<TemporaryUploadedFile: ywzvivofile2.ac (application/octet-stream)>]}>
+/src/files/ywzvivofile2/ywzvivofile2.ac
+[03/Jun/2022 01:39:14] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+<MultiValueDict: {'ywzvivofile2/ywzvivofile2.aa': [<TemporaryUploadedFile: ywzvivofile2.aa (application/octet-stream)>]}>
+/src/files/ywzvivofile2/ywzvivofile2.aa
+/src/files/
+<MultiValueDict: {'ywzvivofile2/ywzvivofile2.ab': [<TemporaryUploadedFile: ywzvivofile2.ab (application/octet-stream)>]}>
+/src/files/ywzvivofile2/ywzvivofile2.ab
+[03/Jun/2022 01:40:01] "POST /upload_files/ HTTP/1.0" 200 2
+[03/Jun/2022 01:40:01] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+<MultiValueDict: {'ywzvivofile2/ywzvivofile2.ac': [<TemporaryUploadedFile: ywzvivofile2.ac (application/octet-stream)>]}>
+/src/files/ywzvivofile2/ywzvivofile2.ac
+[03/Jun/2022 01:40:45] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+<MultiValueDict: {'ywzvivofile2/ywzvivofile2.aa': [<TemporaryUploadedFile: ywzvivofile2.aa (application/octet-stream)>]}>
+/src/files/ywzvivofile2/ywzvivofile2.aa
+/src/files/
+<MultiValueDict: {'ywzvivofile2/ywzvivofile2.ab': [<TemporaryUploadedFile: ywzvivofile2.ab (application/octet-stream)>]}>
+/src/files/ywzvivofile2/ywzvivofile2.ab
+[03/Jun/2022 01:41:32] "POST /upload_files/ HTTP/1.0" 200 2
+[03/Jun/2022 01:41:33] "POST /upload_files/ HTTP/1.0" 200 2
