@@ -31,4 +31,4 @@ When you start this docker, then you will get this effect:
 </center>
 
 ## Note
-If the file is too large(>500MB), then will echo 413 error for nginx/django.conf: `client_max_body_size    500m;`
+If the file is too large(>=1024B), then will echo 413 error for nginx/django.conf: `client_max_body_size    500m;`

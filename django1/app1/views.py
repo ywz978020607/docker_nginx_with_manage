@@ -416,6 +416,10 @@ def upload_files(request):
             if os.path.exists(file_path):
                 os.system("rm -rf {}".format(file_path))
             os.system("mkdir -p {}".format(file_path_directory))
-            with open(file_path, 'wb') as f:
-                f.write(data.read())
+            # with open(file_path, 'wb') as f:
+            #     f.write(data.read())
+            f = open(file_path, 'wb')
+            for line in data.chunks():     # 由于文件不是一次性上传的，因此一块一块的写入
+                f.write(line)
+            f.close()
     return HttpResponse("ok")
