@@ -390,8 +390,8 @@
                     xhr.upload.addEventListener('progress', function (e) {
                         console.log(that.files[0]);
                         var uploadPercentage = Math.round((e.loaded * 100) / e.total);
-                        if(uploadPercentage > 80 && uploadPercentage < 100){
-                            that.files[idx].uploadPercentage = 80;
+                        if(uploadPercentage > 90 && uploadPercentage < 100){
+                            that.files[idx].uploadPercentage = 90;
                         }
                         else{
                             that.files[idx].uploadPercentage = uploadPercentage;
