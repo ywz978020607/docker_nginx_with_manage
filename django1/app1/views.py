@@ -238,16 +238,16 @@ def auth(request):
             return JsonResponse(ret)
         #注册
         elif mode=='2':
+            data = json.loads(recv['data'])
+            username = data[0]
+            password = data[1]
+            password2 = data[2]
             option = Options.objects.filter(username = username)
             if len(option) == 0:
                 Options.objects.create(username = username)
             if not Options.objects.filter(username = username)[0].enable_sign_up:
                 ret['tips'] = '管理员禁止用户自助注册'
                 return JsonResponse(ret)
-            data = json.loads(recv['data'])
-            username = data[0]
-            password = data[1]
-            password2 = data[2]
             if password != password2:
                 ret['tips'] = '密码不一致'
             elif User.objects.filter(username=username):
