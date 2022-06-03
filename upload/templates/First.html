@@ -117,12 +117,17 @@
                     开关设置: <br><br>
                     <input type="checkbox" v-model="enable_sign_up" @click="this.change_sign_up();">允许用户注册</input>
                     <br><br>
+                    <hr style="width: 25%; size: 3em;" />
+                    删除文件/文件夹<br><br>
+                    <p>文件/文件夹相对路径路径:(/src)/files/ <input style="background-color: rgb(211, 211, 215);" v-model="input_val[0]"></p>
+                    <button class="btn btn-primary " @click="this.deletefiles();">删除文件/文件夹</button>
+                    <br><br><br>
                 </div>
                 <!----->
 
                 <div v-if="seen_id==2">
                     <br>
-                    <p>文件保存相对路径路径[不存在则自动创建]:(/src)/files/ <input style="border: 1;" v-model="input_val[0]"></p>
+                    <p>文件保存相对路径路径[不存在则自动创建]:(/src)/files/ <input style="background-color: rgb(211, 211, 215);" v-model="input_val[0]"></p>
                     <br><br>
                     <div class="dropbox p-3">
                         <br><br>
@@ -346,6 +351,28 @@
                         }
                     })
                 },
+                deletefiles(){
+                    if(that.input_val[0]){
+                        var param = {
+                            "kind": "006", 
+                            "pathprefix": that.input_val[0],
+                            "username": that.username,
+                        }
+                        $.post(that.direction + "/auth/", param, function(data, status) {
+                            console.log("get back.")
+                            console.log(data);
+                            if (data['status'] == 'ok') {
+                                alert("成功")
+                            } else {
+                                alert("失败")
+                            }
+                        })
+                    }
+                    else{
+                        alert("fill file path please")
+                    }
+                },
+
 
                 //通用选择上传文件(夹)
                 chooseFile: function (e) {

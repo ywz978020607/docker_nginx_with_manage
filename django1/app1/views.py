@@ -348,6 +348,18 @@ def auth(request):
             option.save()
             ret['status'] = 'ok'
             return JsonResponse(ret)
+        elif kind == '006': #管理员删除文件/文件夹 - 容器内不会影响宿主机安全&加入..和根目录*等校验防止误删
+            file_path_prefix = "/src/files"
+            input_path_related = request.POST.dict().get("pathprefix")
+            if ".." in input_path_related or input_path_related.strip() == "*" or not input_path_related:
+                ret['status'] = 'fail'
+                ret['msg'] = 'input invalid.'
+            else:
+                file_path = os.path.join(file_path_prefix, input_path_related)
+                print("rm file {}".format(file_path))
+                os.system("rm -rf {}".format(file_path))
+                ret['status'] = 'ok'
+            return JsonResponse(ret)
     ####
     return JsonResponse(ret)
 
