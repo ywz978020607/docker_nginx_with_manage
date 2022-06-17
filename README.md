@@ -31,8 +31,4 @@ When you start this docker, then you will get this effect:
 </center>
 
 ## Note
-If the file is too large, then will echo 413 error for 
-```
-nginx/django.conf: "client_max_body_size    5120m;" #you can change this value
-django1/uwsgi.ini: "buffer-size = 5368709120"       #you can change this value
-```
+If the file is too large, then will echo 413 error for nginx/django.conf: "client_max_body_size    5120m;" #you can change this value
