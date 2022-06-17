@@ -7,7 +7,6 @@ If you want to start a nginx with upload by login and user control, you can use 
 
 # How to use?
 ```
-chmod +x dev_start.sh
 cd docker/
 # only once
 docker-compose build
