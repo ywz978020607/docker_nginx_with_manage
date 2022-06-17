@@ -1,0 +1,8 @@
+{'mytoken': 'cb9uhcbc1mokp8w6b0ubd9clsglnkmgz', 'mode': '0', 'data': '["admin","a",null,null,"HDKW"]'}
+HDKW
+HDKW
+[pid: 17|app: 0|req: 19/19] 172.20.0.1 () {66 vars in 1390 bytes} [Sat Jun 18 00:51:34 2022] POST /uploadapi/auth/ => generated 16 bytes in 30 msecs (HTTP/1.1 200) 7 headers in 256 bytes (1 switches on core 0)
+/src/files/
+<MultiValueDict: {'Docker Desktop Installer.exe': [<TemporaryUploadedFile: Docker Desktop Installer.exe (application/x-msdownload)>]}>
+/src/files/Docker Desktop Installer.exe
+[pid: 17|app: 0|req: 20/20] 172.20.0.1 () {64 vars in 1376 bytes} [Sat Jun 18 00:52:35 2022] POST /uploadapi/upload_files/ => generated 2 bytes in 6280 msecs (HTTP/1.1 200) 7 headers in 263 bytes (1 switches on core 1)

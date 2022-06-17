@@ -1,5 +1,5 @@
 # Docker of nginx with django to support auth, upload(drag or click) and pic_pipeline.
-It's a simple nginx docker with a django backend as the background management module to support user auth and upload files/folder, etc. You can loggin as admin with this account.(user:admin   passwd:a)
+It's a simple nginx docker with a django backend as the background management module to support user auth and upload files/folder, etc. You can loggin as admin with this account.(user:admin   passwd:a). The whole system is placed by Docker(Nginx + Uwsgi + Django + Sqlite3)!
 
 # Why use this?
 
@@ -14,7 +14,7 @@ docker-compose build
 
 docker-compose up -d  #you can change the .yml=> xxx:/src/files path and rerun this command
 ```
-Finally open the page by http://yourip:81/files/ to check the files folder, and open http://yourip:81/myindex.html to login or upload/manage(automatically jump to login). The django log file is at `docker/log/django.log`.
+Finally open the page by http://yourip:81/files/ to check the files folder, and open http://yourip:81/myindex.html to login or upload/manage(automatically jump to login). ~The django log file is at `docker/log/django.log`.~ In Uwsgi version, now the log file is at `docker/log/uwsgi.log`.
 
 # Examples
 When you start this docker, then you will get this effect:
@@ -32,4 +32,8 @@ When you start this docker, then you will get this effect:
 </center>
 
 ## Note
-If the file is too large, then will echo 413 error for nginx/django.conf: `client_max_body_size    5120m;` #you can change this value
+If the file is too large, then will echo 413 error for 
+```
+nginx/django.conf: "client_max_body_size    5120m;" #you can change this value
+django1/uwsgi.ini: "buffer-size = 5368709120"       #you can change this value
+```
