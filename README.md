@@ -32,3 +32,7 @@ When you start this docker, then you will get this effect:
 
 ## Note
 If the file is too large, then will echo 413 error for nginx/django.conf: "client_max_body_size    5120m;" #you can change this value
+
+## Refer
+[One python file to upload easy version refer(no security design)](https://github.com/Tallguy297/SimpleHTTPServerWithUpload):
+see the Refer_upload.py and run as `python3 this.py --bind 0.0.0.0 port`
