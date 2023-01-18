@@ -1,6 +1,7 @@
 files/*
 !files/*.png
 !files/*.jpg
+django1/app1/migrations/*
 *.pid
 *.log
 docker/log/*
