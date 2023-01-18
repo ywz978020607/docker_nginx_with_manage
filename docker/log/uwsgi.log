@@ -72,3 +72,29 @@ spawned uWSGI worker 1 (pid: 10, cores: 2)
 spawned uWSGI worker 2 (pid: 12, cores: 2)
 spawned uWSGI worker 3 (pid: 14, cores: 2)
 spawned uWSGI worker 4 (pid: 16, cores: 2)
+{'mode': '3'}
+[pid: 16|app: 0|req: 1/1] 172.20.0.1 () {62 vars in 1283 bytes} [Wed Jan 18 08:56:48 2023] POST /uploadapi/auth/ => generated 61 bytes in 59 msecs (HTTP/1.1 200) 8 headers in 401 bytes (1 switches on core 0)
+{'mytoken': 'rl9x1nof9ym4nqz618b2acbp1n0x07yh'}
+[pid: 16|app: 0|req: 2/2] 172.20.0.1 () {62 vars in 1318 bytes} [Wed Jan 18 08:56:48 2023] POST /uploadapi/get_verification_pic/ => generated 1120 bytes in 12 msecs (HTTP/1.1 200) 7 headers in 266 bytes (1 switches on core 1)
+{'mytoken': 'rl9x1nof9ym4nqz618b2acbp1n0x07yh', 'mode': '0', 'data': '["admin","a",null,null,"hjfE"]'}
+hjfE
+hjfE
+[pid: 16|app: 0|req: 3/3] 172.20.0.1 () {62 vars in 1331 bytes} [Wed Jan 18 08:56:57 2023] POST /uploadapi/auth/ => generated 16 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 256 bytes (1 switches on core 0)
+{'kind': '000', 'username': 'admin'}
+[pid: 16|app: 0|req: 4/4] 172.20.0.1 () {62 vars in 1286 bytes} [Wed Jan 18 08:56:59 2023] POST /uploadapi/auth/ => generated 79 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 256 bytes (1 switches on core 1)
+{'kind': '002', 'username': 'admin', 'name': 'admin', 'newpasswd': 'ywzywz'}
+[pid: 16|app: 0|req: 5/5] 172.20.0.1 () {62 vars in 1286 bytes} [Wed Jan 18 08:57:07 2023] POST /uploadapi/auth/ => generated 28 bytes in 10 msecs (HTTP/1.1 200) 7 headers in 256 bytes (1 switches on core 0)
+{'kind': '000', 'username': 'admin'}
+[pid: 16|app: 0|req: 6/6] 172.20.0.1 () {62 vars in 1286 bytes} [Wed Jan 18 08:57:08 2023] POST /uploadapi/auth/ => generated 84 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 256 bytes (1 switches on core 1)
+{'mode': '3'}
+[pid: 16|app: 0|req: 7/7] 172.20.0.1 () {62 vars in 1327 bytes} [Wed Jan 18 08:57:09 2023] POST /uploadapi/auth/ => generated 61 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 256 bytes (1 switches on core 0)
+{'mytoken': 'rl9x1nof9ym4nqz618b2acbp1n0x07yh'}
+[pid: 16|app: 0|req: 8/8] 172.20.0.1 () {62 vars in 1318 bytes} [Wed Jan 18 08:57:09 2023] POST /uploadapi/get_verification_pic/ => generated 1292 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 266 bytes (1 switches on core 1)
+{'mytoken': 'rl9x1nof9ym4nqz618b2acbp1n0x07yh', 'mode': '0', 'data': '["admin","ywzywz",null,null,"FWM6"]'}
+FWM6
+FWM6
+[pid: 16|app: 0|req: 9/9] 172.20.0.1 () {62 vars in 1331 bytes} [Wed Jan 18 08:57:15 2023] POST /uploadapi/auth/ => generated 16 bytes in 4 msecs (HTTP/1.1 200) 7 headers in 256 bytes (1 switches on core 0)
+{'mode': '3'}
+[pid: 16|app: 0|req: 10/10] 172.20.0.1 () {48 vars in 950 bytes} [Wed Jan 18 08:57:41 2023] POST /uploadapi/auth/ => generated 61 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 408 bytes (1 switches on core 1)
+{'mytoken': '2ddztarufsnpiqsecb8a5ca48h0cj0uo'}
+[pid: 16|app: 0|req: 11/11] 172.20.0.1 () {50 vars in 998 bytes} [Wed Jan 18 08:57:41 2023] POST /uploadapi/get_verification_pic/ => generated 1272 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 273 bytes (1 switches on core 0)
