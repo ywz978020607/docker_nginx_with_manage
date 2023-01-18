@@ -54,7 +54,7 @@
                 <button class="btn btn-primary" @click="input_val[0]='';this.seen_id=0; this.showPicFileContrast();">图片url/本地上传&对比&下载<br>pipeline-demo</button> &nbsp;&nbsp;&nbsp;&nbsp;
                 <button v-if="username.slice(0,5)=='admin'" class="btn btn-primary" @click="input_val[0]='';this.seen_id=1;this.buttonadmin();">管理员界面</button> &nbsp;&nbsp;&nbsp;&nbsp;
                 <button class="btn btn-primary" @click="input_val[0]='ywz';this.seen_id=2;">上传文件</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="btn btn-primary" @click="input_val[0]='';this.jumpurl('../../files/');">下载文件-nginx原生</button>
+                <button class="btn btn-primary" @click="input_val[0]='';this.jumpurl('../../files/ywz/');">下载文件-nginx原生</button>
                 <br> <br> <br>
 
                 <div v-if="seen_id==0">
