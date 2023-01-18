@@ -194,7 +194,7 @@ def auth(request):
             print(data[4])#输入的
             print(session.get('CheckCode')) #记忆的
             # print(request.session['CheckCode'])
-            if str(data[4])!=str(session.get('CheckCode')):
+            if str(data[4]).lower()!=str(session.get('CheckCode')).lower():
                 ret['tips'] = '验证码不正确'
                 return JsonResponse(ret)
         ####
