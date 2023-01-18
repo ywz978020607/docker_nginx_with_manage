@@ -355,6 +355,7 @@ def auth(request):
                 ret['status'] = 'fail'
                 ret['msg'] = 'input invalid.'
             else:
+                file_path_prefix = file_path_prefix.split("/files/")[-1] #支持带域名全路径匹配删除
                 file_path = os.path.join(file_path_prefix, input_path_related)
                 print("rm file {}".format(file_path))
                 os.system("rm -rf {}".format(file_path))
@@ -435,3 +436,35 @@ def upload_files(request):
                 f.write(line)
             f.close()
     return HttpResponse("ok")
+
+
+# 剪贴板
+def copy_pass(request):
+    action = str(request.GET['action'])
+    keyname = str(request.GET['keyname'])
+    ret = {}
+
+    # if action == 'get':
+    #     #print(ret)
+    #     return JsonResponse(ret) 
+    if action == 'get_all':
+        items = TextKeyVal.objects.filter(keyname=keyname)
+        for item in items:
+            ret[item.keyname] = item.value
+        return ret
+    elif action == 'set':
+        value = str(request.GET['value'])
+        # 修改val
+        items = TextKeyVal.objects.filter(keyname=keyname)
+        if len(items)>0:
+            item = items[0]
+            item.value = value
+            item.save()
+        else:
+            TextKeyVal.objects.create(keyname=keyname, value=value)
+        return HttpResponse(keyname + ' write ok')
+    # elif action == 'del':
+    elif action == 'del_all':
+        TextKeyVal.objects.filter().all().delete()
+        return HttpResponse('ok')
+    return HttpResponse('nothing deal with')

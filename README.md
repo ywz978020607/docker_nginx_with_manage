@@ -33,6 +33,13 @@ When you start this docker, then you will get this effect:
 ## Note
 If the file is too large, then will echo 413 error for nginx/django.conf: "client_max_body_size    5120m;" #you can change this value
 
+If model file has changed, for this repo do not refresh db file, you can run this command:
+```
+cd django1/
+python manage.py makemigrations
+python manage.py migrate
+```
+
 ## Refer
 [One python file to upload easy version refer(no security design)](https://github.com/Tallguy297/SimpleHTTPServerWithUpload):
 see the Refer_upload.py and run as `python3 this.py --bind 0.0.0.0 port`

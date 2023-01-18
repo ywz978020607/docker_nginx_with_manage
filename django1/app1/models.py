@@ -9,6 +9,10 @@ class Options(models.Model):
     username = models.CharField(max_length=30) #只绑定'admin'
     enable_sign_up = models.BooleanField(default = False)
 
+class TextKeyVal(models.Model):
+    keyname = models.CharField(max_length=30)
+    value = models.TextField()
+
 # class Status(models.Model):
 #     name = models.CharField(max_length=30,default="")
 #     temptime = models.DateTimeField(auto_now=True)
