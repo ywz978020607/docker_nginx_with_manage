@@ -13,7 +13,7 @@ docker-compose build
 
 docker-compose up -d  #you can change the docker-compose.yml=> xxx:/src/files path and rerun this command
 ```
-Finally open the page by http://yourip:81/files/ to check the files folder, and open http://yourip:81/myindex.html to login or upload/manage(automatically jump to login). ~The django log file is at `docker/log/django.log`.~ In Uwsgi version, now the log file is at `docker/log/uwsgi.log`.
+Finally open the page by http://yourip:81/files/ to check the files folder, and open http://yourip:81/index.html to login or upload/manage(automatically jump to login). ~The django log file is at `docker/log/django.log`.~ In Uwsgi version, now the log file is at `docker/log/uwsgi.log`.
 
 # Examples
 When you start this docker, then you will get this effect:

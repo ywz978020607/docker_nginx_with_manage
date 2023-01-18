@@ -51,9 +51,10 @@
         <center>
             <br> <br>
             <center>
-                <button class="btn btn-primary" @click="this.seen_id=0; this.showPicFileContrast();">图片url/本地上传&对比&下载<br>pipline-demo</button> &nbsp;&nbsp;&nbsp;&nbsp;
-                <button v-if="username.slice(0,5)=='admin'" class="btn btn-primary" @click="this.seen_id=1;this.buttonadmin();">管理员界面</button> &nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="btn btn-primary" @click="this.seen_id=2;">上传文件-nginx补充</button>
+                <button class="btn btn-primary" @click="input_val[0]='';this.seen_id=0; this.showPicFileContrast();">图片url/本地上传&对比&下载<br>pipeline-demo</button> &nbsp;&nbsp;&nbsp;&nbsp;
+                <button v-if="username.slice(0,5)=='admin'" class="btn btn-primary" @click="input_val[0]='';this.seen_id=1;this.buttonadmin();">管理员界面</button> &nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-primary" @click="input_val[0]='ywz';this.seen_id=2;">上传文件</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-primary" @click="input_val[0]='';this.jumpurl('../../files/');">下载文件-nginx原生</button>
                 <br> <br> <br>
 
                 <div v-if="seen_id==0">
@@ -164,7 +165,7 @@
                     ],
                     //// 
                     showimg: "",
-                    input_val: [null, null, null, null, null, null, null, null], //初始8个null
+                    input_val: ['ywz', null, null, null, null, null, null, null], //初始8个null
                     res_data: [],
                     enable_sign_up: false,
                     downflag: 0, //图片处理后-允许下载开关
@@ -438,6 +439,10 @@
                     for (var i = 0; i !== dt.files.length; i++) {
                         this.uploadFile(dt.files[i]);
                     }
+                },
+
+                jumpurl: function (url) {
+                    window.location.href = url
                 }
             },
 
