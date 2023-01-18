@@ -98,3 +98,47 @@ FWM6
 [pid: 16|app: 0|req: 10/10] 172.20.0.1 () {48 vars in 950 bytes} [Wed Jan 18 08:57:41 2023] POST /uploadapi/auth/ => generated 61 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 408 bytes (1 switches on core 1)
 {'mytoken': '2ddztarufsnpiqsecb8a5ca48h0cj0uo'}
 [pid: 16|app: 0|req: 11/11] 172.20.0.1 () {50 vars in 998 bytes} [Wed Jan 18 08:57:41 2023] POST /uploadapi/get_verification_pic/ => generated 1272 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 273 bytes (1 switches on core 0)
+{'mytoken': '2ddztarufsnpiqsecb8a5ca48h0cj0uo', 'mode': '0', 'data': '["admin","buaamc2",null,null,"MgTD"]'}
+MgTD
+MgTD
+[pid: 16|app: 0|req: 12/12] 172.20.0.1 () {50 vars in 1011 bytes} [Wed Jan 18 09:01:20 2023] POST /uploadapi/auth/ => generated 102 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 264 bytes (1 switches on core 1)
+{'mytoken': '2ddztarufsnpiqsecb8a5ca48h0cj0uo', 'mode': '0', 'data': '["admin","ywzywz",null,null,"MgTD"]'}
+MgTD
+MgTD
+[pid: 16|app: 0|req: 13/13] 172.20.0.1 () {50 vars in 1011 bytes} [Wed Jan 18 09:01:25 2023] POST /uploadapi/auth/ => generated 16 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 263 bytes (1 switches on core 0)
+{'kind': '000', 'username': 'admin'}
+[pid: 16|app: 0|req: 14/14] 172.20.0.1 () {50 vars in 966 bytes} [Wed Jan 18 09:03:10 2023] POST /uploadapi/auth/ => generated 84 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 263 bytes (1 switches on core 1)
+/src/files/
+<MultiValueDict: {'摘要.txt': [<InMemoryUploadedFile: 摘要.txt (text/plain)>]}>
+/src/files/摘要.txt
+[pid: 16|app: 0|req: 15/15] 172.20.0.1 () {52 vars in 1040 bytes} [Wed Jan 18 09:19:06 2023] POST /uploadapi/upload_files/ => generated 2 bytes in 9 msecs (HTTP/1.1 200) 7 headers in 270 bytes (1 switches on core 0)
+/src/files/
+<MultiValueDict: {'citations.md': [<InMemoryUploadedFile: citations.md (application/octet-stream)>]}>
+/src/files/citations.md
+[pid: 16|app: 0|req: 16/16] 172.20.0.1 () {52 vars in 1040 bytes} [Wed Jan 18 09:19:47 2023] POST /uploadapi/upload_files/ => generated 2 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 270 bytes (1 switches on core 1)
+/src/files/ywz
+<MultiValueDict: {'摘要.txt': [<InMemoryUploadedFile: 摘要.txt (text/plain)>]}>
+/src/files/ywz/摘要.txt
+[pid: 16|app: 0|req: 17/17] 172.20.0.1 () {52 vars in 1040 bytes} [Wed Jan 18 09:19:55 2023] POST /uploadapi/upload_files/ => generated 2 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 270 bytes (1 switches on core 0)
+{'kind': '000', 'username': 'admin'}
+[pid: 16|app: 0|req: 18/18] 172.20.0.1 () {54 vars in 1019 bytes} [Wed Jan 18 09:22:04 2023] POST /uploadapi/auth/ => generated 84 bytes in 7 msecs (HTTP/1.1 200) 7 headers in 263 bytes (1 switches on core 1)
+{'kind': '000', 'username': 'admin'}
+[pid: 16|app: 0|req: 19/19] 172.20.0.1 () {54 vars in 1019 bytes} [Wed Jan 18 09:24:29 2023] POST /uploadapi/auth/ => generated 84 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 263 bytes (1 switches on core 0)
+{'kind': '000', 'username': 'admin'}
+[pid: 16|app: 0|req: 20/20] 172.20.0.1 () {54 vars in 1019 bytes} [Wed Jan 18 09:24:50 2023] POST /uploadapi/auth/ => generated 84 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 263 bytes (1 switches on core 1)
+{'kind': '000', 'username': 'admin'}
+[pid: 16|app: 0|req: 21/21] 172.20.0.1 () {54 vars in 1019 bytes} [Wed Jan 18 09:24:52 2023] POST /uploadapi/auth/ => generated 84 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 263 bytes (1 switches on core 0)
+{'kind': '000', 'username': 'admin'}
+[pid: 16|app: 0|req: 22/22] 172.20.0.1 () {54 vars in 1019 bytes} [Wed Jan 18 09:24:57 2023] POST /uploadapi/auth/ => generated 84 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 263 bytes (1 switches on core 1)
+{'kind': '000', 'username': 'admin'}
+[pid: 16|app: 0|req: 23/23] 172.20.0.1 () {54 vars in 1019 bytes} [Wed Jan 18 09:26:43 2023] POST /uploadapi/auth/ => generated 84 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 263 bytes (1 switches on core 0)
+{'kind': '000', 'username': 'admin'}
+[pid: 16|app: 0|req: 24/24] 172.20.0.1 () {54 vars in 1019 bytes} [Wed Jan 18 09:26:45 2023] POST /uploadapi/auth/ => generated 84 bytes in 5 msecs (HTTP/1.1 200) 7 headers in 263 bytes (1 switches on core 1)
+{'mode': '3'}
+[pid: 16|app: 0|req: 25/25] 172.20.0.1 () {48 vars in 959 bytes} [Wed Jan 18 09:37:13 2023] POST /uploadapi/auth/ => generated 61 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 408 bytes (1 switches on core 0)
+{'mytoken': 'v6l47erufvz67ydy2sahd1zlupq9pz2l'}
+[pid: 16|app: 0|req: 26/26] 172.20.0.1 () {50 vars in 1007 bytes} [Wed Jan 18 09:37:13 2023] POST /uploadapi/get_verification_pic/ => generated 1196 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 273 bytes (1 switches on core 1)
+{'mytoken': 'v6l47erufvz67ydy2sahd1zlupq9pz2l', 'mode': '0', 'data': '["admin","ywzywz",null,null,"xjbv"]'}
+xjbv
+XJBV
+[pid: 16|app: 0|req: 27/27] 172.20.0.1 () {50 vars in 1020 bytes} [Wed Jan 18 09:37:21 2023] POST /uploadapi/auth/ => generated 66 bytes in 1 msecs (HTTP/1.1 200) 7 headers in 263 bytes (1 switches on core 0)
