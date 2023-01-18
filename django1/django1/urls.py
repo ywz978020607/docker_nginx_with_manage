@@ -25,4 +25,6 @@ urlpatterns = [
     path('get_verification_pic/',views.get_verification_pic),  #认证
     path('upload_files/',views.upload_files),
     path('deal_pic_demo/',views.deal_pic_demo),
+
+    path('copy_pass/',views.copy_pass),
 ]

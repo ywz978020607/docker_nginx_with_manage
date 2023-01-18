@@ -53,7 +53,7 @@
             <center>
                 <button class="btn btn-primary" @click="input_val[0]='';this.seen_id=0; this.showPicFileContrast();">图片url/本地上传&对比&下载<br>pipeline-demo</button> &nbsp;&nbsp;&nbsp;&nbsp;
                 <button v-if="username.slice(0,5)=='admin'" class="btn btn-primary" @click="input_val[0]='';this.seen_id=1;this.buttonadmin();">管理员界面</button> &nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="btn btn-primary" @click="input_val[0]='ywz';this.seen_id=2;">上传文件</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-primary" @click="input_val[0]='ywz';this.seen_id=2;this.copy_pass();">上传文件</button>&nbsp;&nbsp;&nbsp;&nbsp;
                 <button class="btn btn-primary" @click="input_val[0]='';this.jumpurl('../../files/ywz/');">下载文件-nginx原生</button>
                 <br> <br> <br>
 
@@ -147,6 +147,17 @@
                     <br><br><br>
                     文件夹上传
                     <input type="file" class="btn btn-primary" name="upload" webkitdirectory @change="chooseFile">
+
+                    <br><br><br>
+                    剪贴板:
+                    <div v-for="(value, index) in res_dict">
+                        #{{index}}
+                        <input style="background-color: rgb(211, 211, 215);" v-model="input_val[index]" @keyup.enter="this.copy_pass(index)" />
+                        <button @click="this.copy_pass(index)">Set</button>
+                        <br>
+                        <a :href="value">{{value}}</a>
+                        <br><br>
+                    </div>
                 </div>
     </div>
 
@@ -166,7 +177,7 @@
                     //// 
                     showimg: "",
                     input_val: ['ywz', null, null, null, null, null, null, null], //初始8个null
-                    res_data: [],
+                    res_dict: {},
                     enable_sign_up: false,
                     downflag: 0, //图片处理后-允许下载开关
                     direction: "/uploadapi",
@@ -443,6 +454,38 @@
 
                 jumpurl: function (url) {
                     window.location.href = url
+                },
+
+                copy_pass: function (data) {
+                    console.log(data);
+                    that = this;
+                    if (data != null) {
+                        //set
+                        var param = {
+                            "action": "set",
+                            "keyname": data,
+                            "value": this.input_val[data]
+                        };
+                        // alert(param.keyname);
+                        $.post(that.direction + "/copy_pass/", param, function(data, status) {
+                            if (data['status'] == 'ok') {
+                                alert("成功")
+                            } else {
+                                alert("失败")
+                            }
+                        })
+                    } else {
+                        //get
+                        var param = {
+                            "action": "get_all",
+                        };
+                        // alert(param.keyname);
+                        $.post(that.direction + "/copy_pass/", param, function(data, status) {
+                            console.log(data);
+                            that.res_dict = data;
+                            that.copy_pass(); // refresh
+                        })
+                    }
                 }
             },
 
@@ -459,7 +502,9 @@
                 dropbox.addEventListener('dragenter', this.onDrag, false);
                 dropbox.addEventListener('dragover', this.onDrag, false);
                 dropbox.addEventListener('drop', this.onDrop, false);
-
+                
+                //显示剪贴板初始化
+                this.copy_pass();
             },
 
 

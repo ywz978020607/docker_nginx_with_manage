@@ -440,20 +440,17 @@ def upload_files(request):
 
 # 剪贴板
 def copy_pass(request):
-    action = str(request.GET['action'])
-    keyname = str(request.GET['keyname'])
+    action = str(request.POST.dict().get('action'))
     ret = {}
 
-    # if action == 'get':
-    #     #print(ret)
-    #     return JsonResponse(ret) 
     if action == 'get_all':
-        items = TextKeyVal.objects.filter(keyname=keyname)
+        items = TextKeyVal.objects.filter()
         for item in items:
             ret[item.keyname] = item.value
-        return ret
+        return JsonResponse(ret)
     elif action == 'set':
-        value = str(request.GET['value'])
+        keyname = str(request.POST.dict().get('keyname'))
+        value = str(request.POST.dict().get('value'))
         # 修改val
         items = TextKeyVal.objects.filter(keyname=keyname)
         if len(items)>0:
@@ -462,9 +459,9 @@ def copy_pass(request):
             item.save()
         else:
             TextKeyVal.objects.create(keyname=keyname, value=value)
-        return HttpResponse(keyname + ' write ok')
+        return JsonResponse({'status': 'ok'})
     # elif action == 'del':
-    elif action == 'del_all':
-        TextKeyVal.objects.filter().all().delete()
-        return HttpResponse('ok')
-    return HttpResponse('nothing deal with')
+    # elif action == 'del_all':
+    #     TextKeyVal.objects.filter().all().delete()
+    #     return HttpResponse('ok')
+    return JsonResponse({'status': 'pass'})
