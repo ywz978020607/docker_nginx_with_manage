@@ -3,5 +3,6 @@ files/*
 !files/*.jpg
 *.pid
 *.log
+docker/log/*
 # 首次添加仓库后删除,保证后续修改账号密码后不会被重置
 django1/db.sqlite3
