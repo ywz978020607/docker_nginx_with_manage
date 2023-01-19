@@ -50,7 +50,7 @@ def get_verification_pic(request):
                             bg_color=(255, 255, 255),
                             fg_color=(0, 0, 255),
                             font_size=18,
-                            font_type="/src/django1/Monaco.ttf",
+                            font_type="/src/django1/Monaco.ttf", # 注意绝对路径
                             length=4,
                             draw_lines=True,
                             n_line=(1, 2),
