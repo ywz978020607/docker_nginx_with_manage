@@ -40,6 +40,11 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
+## Cancel db to git
+```
+git update-index --assume-unchanged django1/db.sqlite3 # 取消以后的更新，但需要保留目前git的状态
+```
+
 ## Refer
 [One python file to upload easy version refer(no security design)](https://github.com/Tallguy297/SimpleHTTPServerWithUpload):
 see the Refer_upload.py and run as `python3 this.py --bind 0.0.0.0 port`
