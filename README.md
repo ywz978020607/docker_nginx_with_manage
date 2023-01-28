@@ -47,4 +47,5 @@ git update-index --assume-unchanged django1/db.sqlite3 # 取消以后的更新�
 
 ## Refer
 [One python file to upload easy version refer(no security design)](https://github.com/Tallguy297/SimpleHTTPServerWithUpload):
-see the Refer_upload.py and run as `python3 this.py --bind 0.0.0.0 port`
+see the Refer_upload.py and run as `python3 this.py --bind 0.0.0.0 port`  
+If you need run django by uwsgi manually, run `uwsgi --ini django1/uwsgi.ini` and `uwsgi --reload uwsgi.pid` to restart
