@@ -56,7 +56,6 @@
                 <button class="btn btn-primary" @click="input_val[0]='ywz';this.seen_id=2;this.copy_pass();">上传文件</button>&nbsp;&nbsp;&nbsp;&nbsp;
                 <button class="btn btn-primary" @click="input_val[0]='';this.jumpurl('../../files/ywz/');">下载文件-nginx原生</button>
                 <br> <br> <br>
-
                 <div v-if="seen_id==0">
                     <center>
                         看不见图则再点一下标题<br>
@@ -186,6 +185,8 @@
                     res_data_admin: [],
                     //drag
                     files: [],
+                    start_up_idx: [],
+                    alread_up_idx: [],
                     item: "",
                 }
             },
@@ -395,6 +396,10 @@
                     for (var i = 0; i !== e.target.files.length; i++) {
                         this.uploadFile(e.target.files[i]);
                     }
+                    // 创建线程
+                    this.uploadFileByXHR(); 
+                    this.uploadFileByXHR(); 
+                    this.uploadFileByXHR(); 
                 },
                 //拖拽事件
                 uploadFile: function (file) {
@@ -402,14 +407,28 @@
                     console.log(file);
                     var item = {
                         name: (file.webkitRelativePath==="")?file.name:file.webkitRelativePath,
-                        uploadPercentage: 1
+                        uploadPercentage: 1,
+                        file: file
                     };
                     this.files.push(item);
-                    var idx = this.files.length - 1;
-                    //
+                },
+
+                uploadFileByXHR: function(e) {
+                    console.log("trigger once");
+                    that = this;
+                    // var idx = this.files.length - 1;
+                    var idx = 0;
+                    while(idx in this.alread_up_idx || idx in this.start_up_idx){
+                        idx += 1;
+                    }
+                    if (idx >= this.files.length) {
+                        return;
+                    }
+                    this.start_up_idx.push(idx);
+
                     var fd = new FormData();
                     // fd.append(file.name, file); //一次appen如果有效则变成一个文件
-                    fd.append((file.webkitRelativePath==="")?file.name:file.webkitRelativePath, file); //一次appen如果有效则变成一个文件
+                    fd.append(that.files[idx].name, that.files[idx].file); //一次appen如果有效则变成一个文件
                     if(that.input_val[0]){
                         fd.append('pathprefix', that.input_val[0]);//不会被request.FILES扫描出来
                     }
@@ -433,11 +452,14 @@
                         that.files[idx].uploadPercentageText = uploadPercentage + "%";
                         if(e.loaded == e.total){
                             that.files[idx].uploadPercentageText = "done.";
+                            that.alread_up_idx.push(idx);
+                            that.uploadFileByXHR();
                         }
                     }, false);
                     xhr.send(fd);
-                    
                 },
+
+
                 onDrag: function (e) {
                     e.stopPropagation();
                     e.preventDefault();
@@ -450,6 +472,10 @@
                     for (var i = 0; i !== dt.files.length; i++) {
                         this.uploadFile(dt.files[i]);
                     }
+                    // 创建线程
+                    this.uploadFileByXHR(); 
+                    this.uploadFileByXHR(); 
+                    this.uploadFileByXHR(); 
                 },
 
                 jumpurl: function (url) {
@@ -488,7 +514,6 @@
                     }
                 }
             },
-
             mounted() {
                 //确认登录
                 if (localStorage.getItem('loggedname')) {
