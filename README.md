@@ -14,8 +14,8 @@ We do not use docker here, use nginx+django==2.2.0 instead.
 
 # cmd
 ```
-# in dev_start.sh
-
+# As dev_start.sh
+# Please ensure the folder is existed: ./docker/log/
 uwsgi --ini django1/uwsgi.ini
 # uwsgi --reload uwsgi.pid
 # uwsgi --stop uwsgi.pid
