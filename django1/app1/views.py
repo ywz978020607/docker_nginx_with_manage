@@ -180,7 +180,8 @@ def auth(request):
         ret = {"status": "fail"}
         ####
         #可选：验证输入的验证码
-        if mode != '3':  # 不是退出则需要验证
+        # if mode != '3':  # 不是退出则需要验证
+        if 0:
             mytoken = recv['mytoken']
             ##根据mytoken恢复session
             from django.conf import settings
@@ -349,7 +350,7 @@ def auth(request):
             ret['status'] = 'ok'
             return JsonResponse(ret)
         elif kind == '006': #管理员删除文件/文件夹 - 容器内不会影响宿主机安全&加入..和根目录*等校验防止误删
-            file_path_prefix = "/src/files"
+            file_path_prefix = "/data/data/com.termux/files/home/src/files"
             input_path_related = request.POST.dict().get("pathprefix")
             if ".." in input_path_related or input_path_related.strip() == "*" or not input_path_related:
                 ret['status'] = 'fail'
@@ -414,7 +415,7 @@ def deal_pic_demo(request):
 ##接收上传files
 def upload_files(request):
     if request.method == 'POST':
-        file_path_prefix = "/src/files/" 
+        file_path_prefix = "/data/data/com.termux/files/home/src/files/" 
         if request.POST.dict().get("pathprefix"):
             file_path_prefix = os.path.join(file_path_prefix, request.POST.dict().get("pathprefix"))
         print(file_path_prefix)
