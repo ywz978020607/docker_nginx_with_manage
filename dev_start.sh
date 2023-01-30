@@ -5,3 +5,6 @@
 uwsgi --ini django1/uwsgi.ini
 # uwsgi --reload uwsgi.pid
 # uwsgi --stop uwsgi.pid
+
+# nginx
+# nginx -s reload
