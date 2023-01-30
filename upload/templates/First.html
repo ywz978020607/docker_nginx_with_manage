@@ -495,7 +495,6 @@
                         // alert(param.keyname);
                         $.post(that.direction + "/copy_pass/", param, function(data, status) {
                             if (data['status'] == 'ok') {
-                                alert("成功")
                                 that.copy_pass(); // refresh
                             } else {
                                 alert("失败")
