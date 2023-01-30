@@ -43,6 +43,7 @@ python manage.py migrate
 ## Cancel db to git
 ```
 git update-index --assume-unchanged django1/db.sqlite3 # 取消以后的更新，但需要保留目前git的状态
+# git update-index --no-assume-unchanged django1/db.sqlite3 #恢复
 ```
 
 ## Refer

@@ -355,7 +355,7 @@ def auth(request):
                 ret['status'] = 'fail'
                 ret['msg'] = 'input invalid.'
             else:
-                file_path_prefix = file_path_prefix.split("/files/")[-1] #支持带域名全路径匹配删除
+                input_path_related = input_path_related.split("/files/")[-1] #支持带域名全路径匹配删除
                 file_path = os.path.join(file_path_prefix, input_path_related)
                 print("rm file {}".format(file_path))
                 os.system("rm -rf {}".format(file_path))
@@ -425,6 +425,8 @@ def upload_files(request):
             file_path_directory = os.path.dirname(file_path)
             data = request.FILES.get(file)
             print(file_path)
+            if ".." in file_path or "*" in file_path or not os.path.basename(file_path):
+                return HttpResponse("invalid_path")
             # 覆盖
             if os.path.exists(file_path):
                 os.system("rm -rf {}".format(file_path))
