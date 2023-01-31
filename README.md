@@ -20,3 +20,9 @@ uwsgi --ini django1/uwsgi.ini
 # uwsgi --reload uwsgi.pid
 # uwsgi --stop uwsgi.pid
 ```
+
+# Others
+- add kodbox conf for nginx at port 9011
+## ports:
+django(8000) + nginx(9010)
+php(9000) + nginx(9011)
