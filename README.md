@@ -22,6 +22,7 @@ uwsgi --ini django1/uwsgi.ini
 ```
 
 # Others
+- add ssl version(termux nginx supports ssl, add pem/key location and run `nginx -s reload`)
 - add kodbox conf for nginx at port 9011
 unzip in index, and provide service at the whole port, use `php-fpm` to start(change /etc/php-fpm.d/www.conf file to modify `listen = /data/data/com.termux/files/usr/var/run/php-fpm.sock` to `listen = 127.0.0.1:9000`)
 ## ports:
