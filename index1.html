@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>摸鱼大鸽-手机服务器入口</title>
+<script src="./index_dep/vue.global.js"></script>
+<script src="./index_dep/jquery-3.2.1.js"></script>
+<script language="javascript" src="./index_dep/ping.js"></script>
+<style>
+    #search ul {
+        list-style-type: none;
+        display: block;
+        width: 70px;
+        height: 40px;
+        margin: 0;
+        padding: 0;
+        border: 0px;
+        float: left;
+    }
+    #search li {
+        border: 0px;
+        margin: 0px;
+        padding: 0px;
+    }
+    #search form {
+        margin: 0px;
+        padding: 0px;
+    }
+    #search input {
+        height: 30px;
+        width: 400px;
+        margin: 0px;
+    }
+    #search .button {
+        font-size: 17px;
+        font-weight: 600;
+        color: #002D96;
+        height: 30px;
+        width: 110px;
+        margin-left: 50px;
+        background: #e6efc2;
+        opacity: 0.8;
+        border: #7fb80e 1px solid;
+        cursor: pointer;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+    }
+</style>
+</head>
+
+<body style="background-attachment: fixed;text-align: center;color:whitesmoke; background-image:url('./index_dep/bg.jpg'); background-repeat:no-repeat; background-size: cover;">
+
+    <h1 >Termux 手机服务器功能入口(自用非传播)</h1>
+    <table align="center" width="50%"><tr>
+    <td><a href="https://ywz3.buaamc2.net:8920/"><img src="./index_dep/1.png" width="300px"   border=0 /></a></td>
+    <td><a href="https://ywz3.buaamc2.net:9010/upload/templates/First.html"><img src="./index_dep/2.png" width="220px"   border=0 /></a></td>
+    </tr><tr>
+    <td><a href="https://ywz3.buaamc2.net:9011/"><img src="./index_dep/6.png" width="300px"   border=0 /></a></td>
+    <td><a href="https://ywz3.buaamc2.net:9010/files/ywz/"><img src="./index_dep/5.png" width="220px"   border=0 /></a></td>
+    </tr></table> 
+<br>
+
+<div id="app1">
+
+<!-- <span v-if="seen">现在你看到我了</span> -->
+<h2>自动切换搜索引擎-谷歌/百度/必应</h2>
+    <div id="search" align="center">
+        <table>
+            <tr>
+                <td>
+                    <select v-model="selected" @change="changeimg()">
+                        <option value="baidu">Baidu</option>
+                        <option value="google">Google</option>
+                        <option value="bing">Bing</option>
+                      </select>
+                </td>
+                <td id="from_box" style="padding-left:10px;">
+                    <input v-model="search_context" type="text"  autocomplete="off" @keyup.enter="this.search()"/>
+                </td>
+                <td>
+                    <p @click="search">点<img :src=imgsrc width="80">我</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+</div>
+
+<script>
+const App1 = {
+  data() {
+    return {
+    //   seen: true
+        selected: "google",
+        search_engines: {
+            "baidu": ["./index_dep/baidu.png", "http://www.baidu.com/s?ie=UTF-8&wd="],
+            "google": ["./index_dep/google.png", "https://www.google.com/search?q="],
+            "bing": ["./index_dep/bing.svg", "https://www.bing.com/search?q="]
+        },
+        imgsrc: "./index_dep/R-C.gif",
+        search_context: "",
+    }
+  },
+  methods: {
+    changeimg:function(e){
+        this.imgsrc = this.search_engines[this.selected][0];
+    },
+    search:function(e){
+        window.location.href = this.search_engines[this.selected][1] + this.search_context;
+    },
+
+    testsearch:function(e){
+        that = this;
+        temp_selected = that.selected;
+        $.ping({
+            url : 'https://www.' + temp_selected + '.com', 
+            beforePing : function(){},
+            afterPing : function(ping){
+                console.log(temp_selected + ":" + ping);
+                if(ping >= 1600) {
+                    that.selected = "baidu";
+                }
+                that.changeimg();
+            }
+        });
+    }
+
+  },
+  mounted() {
+    this.testsearch();
+    // this.changeimg();
+  }
+}
+
+Vue.createApp(App1).mount('#app1')
+</script>
+
+
+</body>
+<br><br><br>
+<p><a href="https://space.bilibili.com/250616280?spm_id_from=333.999.0.0">Contact [摸鱼大鸽] on Bilibili.com</a> <br>
+    Powered by Mate10pro(on sale ￥400)
+    </p>
+
+</html>
