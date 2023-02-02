@@ -75,7 +75,7 @@
                       </select>
                 </td>
                 <td id="from_box" style="padding-left:10px;">
-                    <input v-model="search_context" type="text"  autocomplete="off" @keyup.enter="this.search()"/>
+                    <input id="inputText" v-model="search_context" type="text"  autocomplete="off" @keyup.enter="this.search()"/>
                 </td>
                 <td>
                     <p @click="search">点<img :src=imgsrc width="80">我</p>
@@ -128,6 +128,7 @@ const App1 = {
 
   },
   mounted() {
+    document.getElementById('inputText').focus();
     this.testsearch();
     // this.changeimg();
   }
