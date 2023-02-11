@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 # from django.urls import include     #ywz
 from app1 import views #ywz
+from app1 import openapi
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +28,7 @@ urlpatterns = [
     path('deal_pic_demo/',views.deal_pic_demo),
 
     path('copy_pass/',views.copy_pass),
+
+    #openapi
+    path('openapi/test/', openapi.test),
 ]
