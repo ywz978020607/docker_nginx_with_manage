@@ -30,5 +30,6 @@ urlpatterns = [
     path('copy_pass/',views.copy_pass),
     
     # openapi
+    path('openapi/onenet/', openapi.onenet),
     path('openapi/test/', openapi.test)
 ]
