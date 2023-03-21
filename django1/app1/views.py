@@ -156,12 +156,12 @@ def get_verification_pic(request):
     engine = import_module(settings.SESSION_ENGINE)
     sessionstore = engine.SessionStore
     session = sessionstore(mytoken)
-    # print(session)
-    # print("==")
-    # print(session['status'])
+    print(session)
+    print("==")
+    print(session['status'])
     session['CheckCode'] = code #赋值
     session.save()
-    # print(code)
+    print(code)
     ###
     # print(f.getvalue())
     image_data = f.getvalue()
