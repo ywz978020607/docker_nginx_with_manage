@@ -78,15 +78,15 @@
             <td>
                 <h1 >三星上网本搭建服务器[x86架构]</h1>
                 <table align="center" width="50%"><tr>
-                <td><img :src=function_entry.emby[0] width="300" @click="alert('https://ywzss.buaamc2.net:8920/')"></td>
-                <td><a href="https://ywzss.buaamc2.net/upload/templates/First.html"><img src="./index_dep/2.png" width="220px"   border=0 /></a></td>
+                <td><img :src=function_entry.emby[0] width="300" @click="jumpurl(function_entry.emby[1])"></td>
+                <td><a href="https://ywzss.buaamc2.net"><img src="" width="220px"   border=0 /></a></td>
                 </tr><tr>
-                <td><a href="http://ywzss.buaamc2.net:11000/"><img src="./index_dep/nextcloud.png" width="300"   border=0 /></a></td>
-                <td><a href="https://ywzss.buaamc2.net/files/"><img src="./index_dep/5.png" width="220px"   border=0 /></a></td>
+                <td><a href="http://ywzss.buaamc2.net"><img src="" width="300"   border=0 /></a></td>
+                <td><a href="https://ywzss.buaamc2.net"><img src="" width="220px"   border=0 /></a></td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <a href="http://ywzss.buaamc2.net:8384"><img src="./index_dep/syncthing.png" height="50px"   border=0 /></a>
+                        <a href="http://ywzss.buaamc2.net"><img src="" height="50px"   border=0 /></a>
                     </td>
                 </tr>
                 </table> 
@@ -115,7 +115,11 @@ const App1 = {
             "bing": ["./index_dep/bing.svg", "https://www.bing.com/search?q="],
         },
         function_entry:{
-            "emby": ["./index_dep/1.png"]
+            "emby": ["./index_dep/1.png", ":8920"],
+            "upload": ["./index_dep/2.png", "/upload/templates/First.html"],
+            "nextcloud": ["./index_dep/nextcloud.png", ":11000/"],
+            "nginx": ["./index_dep/5.png", "/files/"],
+            "syncthing": ["./index_dep/syncthing.png", ":8384"],
         },
         imgsrc: "./index_dep/R-C.gif",
         search_context: "",
@@ -127,6 +131,9 @@ const App1 = {
     },
     search:function(e){
         window.location.href = this.search_engines[this.selected][1] + this.search_context;
+    },
+    jumpurl:function(url_after_domain){
+        window.location.href = this.this_domain + url_after_domain;
     },
 
     testsearch:function(e){
