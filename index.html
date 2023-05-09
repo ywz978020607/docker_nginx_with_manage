@@ -73,41 +73,15 @@
                 </tr>
             </table>
         </div>
-    </div>
-
     <table style="text-align:center; margin:auto;">
         <tr>
-            <!-- <td>
-                <h1 >华为手机搭建服务器[arm64架构]</h1>
-                <table align="center" width="50%"><tr>
-                <td><a href="https://ywz3.buaamc2.net:8920/"><img src="./index_dep/1.png" width="300px"   border=0 /></a></td>
-                <td><a href="https://ywz3.buaamc2.net:9010/upload/templates/First.html"><img src="./index_dep/2.png" width="220px"   border=0 /></a></td>
-                </tr><tr>
-                <td><a href="https://ywz3.buaamc2.net:9011/"><img src="./index_dep/6.png" width="300px"   border=0 /></a></td>
-                <td><a href="https://ywz3.buaamc2.net:9010/files/ywz/"><img src="./index_dep/5.png" width="220px"   border=0 /></a></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <a href="http://ywz3.buaamc2.net:8384"><img src="./index_dep/syncthing.png" height="50px"   border=0 /></a>
-                    </td>
-                </tr>
-                </table> 
-                <p>Powered by Mate10pro(on sale ￥400)<br>
-                    with Global IPV6, HarmonyOS 2.0, All HTTPS</p>
-            </td>
-            
-
-            <td>
-                <div style="border: 1px solid; height: 500px;"></div>
-            </td> -->
-
             <td>
                 <h1 >三星上网本搭建服务器[x86架构]</h1>
                 <table align="center" width="50%"><tr>
-                <td><a href="https://ywzss.buaamc2.net:8920/"><img src="./index_dep/1.png" width="300px"   border=0 /></a></td>
+                <td><img :src=function_entry.emby[0] width="300" @click="alert('https://ywzss.buaamc2.net:8920/')"></td>
                 <td><a href="https://ywzss.buaamc2.net/upload/templates/First.html"><img src="./index_dep/2.png" width="220px"   border=0 /></a></td>
                 </tr><tr>
-                <td><a href="http://ywzss.buaamc2.net:11000/"><img src="./index_dep/nextcloud.png" width="300px"   border=0 /></a></td>
+                <td><a href="http://ywzss.buaamc2.net:11000/"><img src="./index_dep/nextcloud.png" width="300"   border=0 /></a></td>
                 <td><a href="https://ywzss.buaamc2.net/files/"><img src="./index_dep/5.png" width="220px"   border=0 /></a></td>
                 </tr>
                 <tr>
@@ -125,6 +99,7 @@
 
     </table>
 
+    </div>
 <br>
 
 <script>
@@ -132,11 +107,15 @@ const App1 = {
   data() {
     return {
     //   seen: true
+        this_domain: '',
         selected: "google",
         search_engines: {
             "baidu": ["./index_dep/baidu.png", "http://www.baidu.com/s?ie=UTF-8&wd="],
             "google": ["./index_dep/google.png", "https://www.google.com/search?q="],
-            "bing": ["./index_dep/bing.svg", "https://www.bing.com/search?q="]
+            "bing": ["./index_dep/bing.svg", "https://www.bing.com/search?q="],
+        },
+        function_entry:{
+            "emby": ["./index_dep/1.png"]
         },
         imgsrc: "./index_dep/R-C.gif",
         search_context: "",
@@ -171,6 +150,8 @@ const App1 = {
     document.getElementById('inputText').focus();
     this.testsearch();
     // this.changeimg();
+    this.this_domain = location.origin;
+    console.log(this.this_domain);
   }
 }
 
