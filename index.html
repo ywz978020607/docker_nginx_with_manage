@@ -148,16 +148,24 @@ const App1 = {
     },
     testipv6:function(test_domain){
         var that = this;
-        $.ping({
-            url : test_domain, 
-            beforePing : function(){},
-            afterPing : function(ping){
-                console.log("ipv6 ping:" + ping);
-                if(ping >= 1600) {
-                    that.this_domain = test_domain;
+        if(that.this_domain != location.origin){
+            $.ping({
+                url : test_domain, 
+                beforePing : function(){},
+                afterPing : function(ping){
+                    console.log("ipv6 ping:" + ping);
+                    if(ping >= 1600) {
+                        that.this_domain = test_domain;
+                    }
+                    else {
+                        that.this_domain = location.origin;
+                    }
                 }
-            }
-        });
+            });
+        }
+        else {
+            that.this_domain = location.origin;
+        }
     },
 
   },
@@ -165,7 +173,6 @@ const App1 = {
     document.getElementById('inputText').focus();
     this.testsearch();
     // this.changeimg();
-    this.this_domain = location.origin;
     this.testipv6('https://ywzss.buaamc2.net');
   }
 }
