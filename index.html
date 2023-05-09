@@ -52,6 +52,9 @@
 <body style="background-attachment: fixed;text-align: center;color:whitesmoke; background-image:url('./index_dep/bg.jpg'); background-repeat:no-repeat; background-size: cover;">
 
     <div id="app1">
+        <h1>摸鱼大鸽网站首页</h1>
+        <p @click="change_ipv4_ipv6();"><span v-if="this_domain.indexOf('ywzss.buaamc2.net')!=-1">[纯ipv6版]</span><span v-else>[ipv4代理版本]</span></p>
+        
         <!-- <span v-if="seen">现在你看到我了</span> -->
         <h2>自动切换搜索引擎-谷歌/百度/必应</h2>
         <div id="search" align="center">
@@ -146,6 +149,14 @@ const App1 = {
             }
         });
     },
+    change_ipv4_ipv6:function(e){
+        if(this.this_domain.indexOf('ywzss.buaamc2.net')!=-1){
+            this.this_domain = "https://mydg.abyue.cn";
+        }
+        else{
+            this.this_domain = "https://ywzss.buaamc2.net";
+        }
+    },
     testipv6:function(test_domain){
         var that = this;
         $.ping({
@@ -166,7 +177,7 @@ const App1 = {
     this.testsearch();
     // this.changeimg();
     this.this_domain = location.origin;
-    this.testipv6('https://ywzss.buaamc2.net');
+    // this.testipv6('https://ywzss.buaamc2.net');
     console.log(this.this_domain);
   }
 }
