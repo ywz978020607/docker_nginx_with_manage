@@ -130,7 +130,7 @@ const App1 = {
     search:function(e){
         window.location.href = this.search_engines[this.selected][1] + this.search_context;
     },
-    jumpurl:function(url_after_domain){
+    jumpurl:function(url_after_domain=''){
         window.location.href = this.this_domain + url_after_domain;
     },
 
