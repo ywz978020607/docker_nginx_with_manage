@@ -12,7 +12,3 @@ from app1.models import * #引用
 # 剪贴板
 def test(request):
     return JsonResponse({'status': 'ok'})
-
-def trigger(request):
-    return JsonResponse({'status': 'ok'})
-
