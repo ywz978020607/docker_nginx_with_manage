@@ -4,6 +4,8 @@ files/*
 django1/app1/migrations/*
 *.pid
 *.log
+*.pyc
+
 docker/log/*
 !docker/log/__empty.py
 # 首次添加仓库后删除,保证后续修改账号密码后不会被重置
