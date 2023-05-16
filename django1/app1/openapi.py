@@ -15,6 +15,7 @@ def test(request):
 
 def trigger(request):
     print(request)
+    
     print("--------------")
     return JsonResponse({'status': 'ok'})
 
