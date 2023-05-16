@@ -10,4 +10,3 @@ docker/log/*
 # >> git update-index --assume-unchanged django1/db.sqlite3 # 取消以后的更新，但需要保留目前git的状态
 # >> git update-index --no-assume-unchanged django1/db.sqlite3 #恢复
 # django1/db.sqlite3
-django1/app1/openapi.py
