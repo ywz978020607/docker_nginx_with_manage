@@ -4,3 +4,4 @@ pycryptodome==3.14.1
 pillow==9.1.1
 requests==2.22.0
 uwsgi==2.0.18
+paho-mqtt==1.6.1
