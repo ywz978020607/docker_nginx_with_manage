@@ -26,7 +26,8 @@ services:
       - -c
       - |
           # python django1/mqtt.py  > docker/log/mqtt.log 2>&1 &
-          python files/secret/scripts/onenet_check_rules.py > docker/log/onenet_check_rules.log 2>&1 &
+          # python files/secret/scripts/onenet_check_rules.py > docker/log/onenet_check_rules.log 2>&1 &
+          python files/secret/scripts/mqtt_ywzss.py > docker/log/mqtt_ywzss.log 2>&1 &
           uwsgi --ini django1/uwsgi.ini && tail -f /dev/null
     volumes:
       - ..:/src
