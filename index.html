@@ -79,20 +79,14 @@
     <table style="text-align:center; margin:auto;">
         <tr>
             <td>
-                <h1 >三星上网本搭建服务器[x86架构]</h1>
+                <h1 >随身WIFI刷Debian搭建服务器[arm64架构]</h1>
                 <table align="center" width="50%"><tr>
-                <td><img :src=function_entry.emby[0] width="300" @click="jumpurl(function_entry.emby[1])"></td>
-                <td><img :src=function_entry.upload[0] width="250" @click="jumpurl(function_entry.upload[1])"></td>
-                </tr><tr>
-                <td><img :src=function_entry.nextcloud[0] width="300" @click="jumpurl(function_entry.nextcloud[1])"></td>
+                <td><img :src=function_entry.upload[0] width="300" @click="jumpurl(function_entry.upload[1])"></td>
                 <td><img :src=function_entry.nginx[0] width="250" @click="jumpurl(function_entry.nginx[1])"></td>
                 </tr>
-                <tr><td colspan="2">
-                    <img :src=function_entry.syncthing[0] width="300" @click="jumpurl(function_entry.syncthing[1])">
-                </td></tr>
                 </table> 
-                <p>Powered by SamSung-N147 Notebook(on sale ￥200) <br>
-                    with Global IPV6, Debian 11, Docker, HTTPS</p>
+                <p>Powered by 410-4g-WIFI(on sale ￥10) <br>
+                    with Global IPV6, Debian 11, Docker, HTTP</p>
             </td>
         </tr>
     </table>
@@ -151,10 +145,10 @@ const App1 = {
     },
     change_ipv4_ipv6:function(e){
         if(this.this_domain.indexOf('ywzss.buaamc2.net')!=-1){
-            this.this_domain = "https://mydg.abyue.cn";
+            this.this_domain = "http://mydgv1.abyue.cn";
         }
         else{
-            this.this_domain = "https://ywzss.buaamc2.net";
+            this.this_domain = "http://mydgv1.buaamc2.net";
         }
         this.jumpurl();
     },
