@@ -31,8 +31,8 @@ services:
           uwsgi --ini django1/uwsgi.ini && tail -f /dev/null
     volumes:
       - ..:/src
-      - /home/ywz/1:/src/files/1 #you can change this ori path, be consistent with last one
-      - /home/ywz/secret:/src/files/secret
+      # - /home/ywz/1:/src/files/1 #you can change this ori path, be consistent with last one
+      # - /home/ywz/secret:/src/files/secret
     expose:
       - "8000"
     restart: always
