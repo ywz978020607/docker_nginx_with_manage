@@ -8,8 +8,8 @@ services:
       - "443:443"
     volumes:
       - ..:/src
-      - /home/ywz/1:/src/files/1 #you can change this ori path, be consistent with next one
-      - /home/ywz/secret:/src/files/secret
+      #- /home/ywz/1:/src/files/1 #you can change this ori path, be consistent with next one
+      #- /home/ywz/secret:/src/files/secret
       - ./nginx:/etc/nginx/conf.d
     depends_on:
       - uploadweb
