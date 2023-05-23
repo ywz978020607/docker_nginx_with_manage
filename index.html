@@ -53,7 +53,7 @@
 
     <div id="app1">
         <h1>摸鱼大鸽网站首页</h1>
-        <p @click="change_ipv4_ipv6();"><span v-if="this_domain.indexOf('ipv4')==-1">[纯ipv6版]</span><span v-else>[ipv4代理版本]</span></p>
+        <p @click="change_ipv4_ipv6();"><span v-if="this_domain.indexOf('ipv4.')==-1">[纯ipv6版]</span><span v-else>[ipv4代理版本]</span></p>
         
         <!-- <span v-if="seen">现在你看到我了</span> -->
         <h2>自动切换搜索引擎-谷歌/百度/必应</h2>
@@ -79,14 +79,14 @@
     <table style="text-align:center; margin:auto;">
         <tr>
             <td>
-                <h1 >随身WIFI刷Debian搭建服务器[arm64架构]</h1>
+                <h1>随身WIFI改Debian服务器[arm64架构]</h1>
                 <table align="center" width="50%"><tr>
                 <td><img :src=function_entry.upload[0] width="300" @click="jumpurl(function_entry.upload[1])"></td>
                 <td><img :src=function_entry.nginx[0] width="250" @click="jumpurl(function_entry.nginx[1])"></td>
                 </tr>
                 </table> 
-                <p>Powered by 410-4g-WIFI(on sale ￥10) <br>
-                    with Global IPV6, Debian 11, Docker, HTTP</p>
+                <p>Powered by USB-随身WIFI(on sale ￥10) <br>
+                    with Global IPV6, Debian 11, Docker, HTTPS</p>
             </td>
         </tr>
     </table>
@@ -144,11 +144,11 @@ const App1 = {
         });
     },
     change_ipv4_ipv6:function(e){
-        if(this.this_domain.indexOf('ipv4')==-1){
-            this.this_domain = "http://ipv4.sti.moyudage.top";
+        if(this.this_domain.indexOf('ipv4.')==-1){
+            this.this_domain = this.this_domain.split("//")[0]+"//ipv4."+this.this_domain.split("//")[1];
         }
         else{
-            this.this_domain = "http://sti.moyudage.top";
+            this.this_domain = this.this_domain.split("ipv4.")[0]+this.this_domain.split("ipv4.")[1];
         }
         this.jumpurl();
     },
