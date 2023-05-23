@@ -53,7 +53,7 @@
 
     <div id="app1">
         <h1>摸鱼大鸽网站首页</h1>
-        <p @click="change_ipv4_ipv6();"><span v-if="this_domain.indexOf('ipv4.')==-1">[纯ipv6版]</span><span v-else>[ipv4代理版本]</span></p>
+        <p @click="change_ipv4_ipv6();"><span v-if="this_domain.indexOf('//ipv4')==-1">[纯ipv6版]</span><span v-else>[ipv4代理版本]</span></p>
         
         <!-- <span v-if="seen">现在你看到我了</span> -->
         <h2>自动切换搜索引擎-谷歌/百度/必应</h2>
@@ -144,11 +144,11 @@ const App1 = {
         });
     },
     change_ipv4_ipv6:function(e){
-        if(this.this_domain.indexOf('ipv4.')==-1){
-            this.this_domain = this.this_domain.split("//")[0]+"//ipv4."+this.this_domain.split("//")[1];
+        if(this.this_domain.indexOf('//ipv4')==-1){
+	    this.this_domain = this.this_domain.split("//")[0]+"//ipv4"+((["top","cn","net"].some(item=>(this.this_domain.split(".")[1].indexOf(item)!=-1)))?".":"")+this.this_domain.split("//")[1];            
         }
         else{
-            this.this_domain = this.this_domain.split("ipv4.")[0]+this.this_domain.split("ipv4.")[1];
+            this.this_domain = this.this_domain.split("//ipv4")[0]+"//"+ ((this.this_domain.split("//ipv4")[1][0]==".")?this.this_domain.split("//ipv4")[1].substr(1,):this.this_domain.split("//ipv4")[1]);
         }
         this.jumpurl();
     },
