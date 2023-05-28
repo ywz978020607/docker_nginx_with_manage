@@ -94,7 +94,7 @@ def get_distance_hav(lat0, lng0, lat1, lng1):
     dlat = fabs(lat0 - lat1)
     h = hav(dlat) + cos(lat0) * cos(lat1) * hav(dlng)
     distance = 2 * EARTH_RADIUS * asin(sqrt(h))
-    return distance 
+    return distance
 # print(get_distance_hav(30.28708, 120.12802999999997, 28.7427, 115.86572000000001))
 #########################
 
@@ -142,12 +142,12 @@ def trigger(request, type=''):
                 db_find_device[0].save()
 
     elif type == 'email':
-        to_emails = request.GET.dict().get("r", "")
+        to_emails = request.GET.dict().get("r", "").strip('"')
         text = request.GET.dict().get("t", "")
         print("send email", to_emails, text)
         send_email_api = TextKeyVal.objects.filter(keyname="email_api")
         if to_emails and text and send_email_api:
-            send_email(to_emails, text, send_email_api[0].value.split(",")[0], send_email_api[0].value.split(",")[1])
+            send_email(to_emails.split(","), text, send_email_api[0].value.split(",")[0], send_email_api[0].value.split(",")[1])
 
     return JsonResponse({'status': 'ok'})
 
