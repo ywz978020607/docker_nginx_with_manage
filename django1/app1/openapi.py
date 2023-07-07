@@ -32,7 +32,7 @@ def send_email(receivers,alert_context, send_email, api_key):
 	# 请自行修改下面的登录口令
 	smtper.login(sender, api_key)  # QQ邮箱smtp的授权码
 	smtper.sendmail(sender, receivers, message.as_string())
-	print('邮件发送完成!')
+	#print('邮件发送完成!')
 
 #########################
 # onenet
