@@ -106,6 +106,10 @@ def get_distance_hav(lat0, lng0, lat1, lng1):
 #########################
 # 剪贴板
 def test(request):
+    if 'msg' in request.GET.dict():
+        return HttpResponse(request.GET.dict()['msg'])
+
+
     return JsonResponse({'status': 'ok'})
 
 def trigger(request, type=''):
@@ -115,7 +119,7 @@ def trigger(request, type=''):
 
     # onenet 触发器 m, r, t
     if type == 'onenet' and False:
-        mode = request.GET.dict().get("r", "")
+        mode = request.GET.dict().get("m", "")
         to_emails = request.GET.dict().get("r", "").split(",")
         text = request.GET.dict().get("t", "")
         print("onenet send email", to_emails, text)
